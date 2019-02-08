@@ -76,7 +76,13 @@ namespace DateUnitTestProject
             UclDate aDate = new UclDate(2019, 4, 20);
             Assert.AreEqual("April kvartal", aDate.GetQuaterTxt());
         }
-
+        [TestMethod]
+        public void TestMethod_GetDayPrev()
+        {
+            UclDate aDate = new UclDate(2020, 3, 1);
+            aDate.MoveToPrevDate();
+            Assert.AreEqual(28, aDate.GetDay());
+        }
 
     }
 }
